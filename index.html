@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ehrenamtliche Bodendenkmalpflege mit QGIS 2.0</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Ehrenamtliche Bodendenkmalpflege mit QGIS 2.0">
+  <meta name="author" content="Kai-Christian Bruhn">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Ehrenamtliche Bodendenkmalpflege mit QGIS 2.0</h1>
+    <h2>Workshop am 12. April 2014</h2>
+    <p>Kai-Christian Bruhn<br/></p>
+  </hgroup>
+    <a href="https://github.com/kacebe/qgis_workshop201404/zipball/gh-pages" class="example">
+     Download
+    </a>
+  <article></article>  
+  <footer class = 'license'>
+    <a href='http://creativecommons.org/licenses/by-sa/3.0/'>
+    <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png'>
+    </a>
+  </footer>
+</slide>
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Ehrenamtliche Bodendenkmalpflege mit QGIS 2.0</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>eine Kooperation von</p>
+
+<div style='float:left;width:48%;'>
+  <ul>
+<li>terraplana - Gesellschaft für Archäologie im Hessischen Ried e.V.<br></li>
+<li>Landesamt für Denkmalpflege, Wiesbaden<br></li>
+<li>i3mainz -Institut für raumbezogene Informations- und Messtechnik, Fachhochschule Mainz<br></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="http://www.terraplana.de/templates/terraplana_01/images/logo50.png" height="50px" /></p>
+
+<p><img src="http://www.denkmalpflege-hessen.de/Logo_st.GIF" height="50px" /></p>
+
+<p><img src="http://www.i3mainz.fh-mainz.de/sites/all/themes/i3Theme_v1/logo.png" height="100px" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Agenda</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;'>
+  <ul>
+<li>Was ist QGIS?</li>
+<li>Was sind Geodaten?
+
+<ul>
+<li>Grundlagen</li>
+<li>Geometrie, Topologie, Thematik, Semantik und Dynamik</li>
+<li>Koordinatenbezugssysteme</li>
+<li>Projektionen</li>
+</ul></li>
+<li>Was ist GIS?
+
+<ul>
+<li>Geodatenquellen</li>
+<li>Geodatenformate</li>
+</ul></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>Geodatenerfassung
+
+<ul>
+<li>mobile Erfassung (GPS)</li>
+<li>digitale Erfassung</li>
+<li>Georeferenzierung von Kartenmaterialien</li>
+<li>Einbinden von Diensten</li>
+<li>Vektorisierung</li>
+</ul></li>
+<li>Geodatenverarbeitung
+
+<ul>
+<li>Filtern/Auswählen</li>
+<li><del>Aggregieren</del></li>
+<li><del>Prozessieren</del></li>
+</ul></li>
+<li>Geodatenpräsentation
+
+<ul>
+<li>Darstellung</li>
+</ul></li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Was ist QGIS</h2>
+  </hgroup>
+  <article data-timings="">
+    <blockquote>
+<p><a href="http://qgis.org">http://qgis.org</a></p>
+</blockquote>
+
+<iframe src='http://qgis.org' width=550px></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Screencasts</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="http://vimeo.com/channels/qgisworkshops">http://vimeo.com/channels/qgisworkshops</a></p>
+
+<iframe src='http://vimeo.com/channels/qgisworkshops'></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>QGIS ist OpenSource</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Jeder kann sich einbringen...<br>
+Ehrenamtliche z.B. in den Fallstudien:
+<a href="http://qgis.org/de/site/about/case_studies/index.html">http://qgis.org/de/site/about/case_studies/index.html</a></p>
+
+<iframe src='http://qgis.org/de/site/about/case_studies/' width=550px></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Vorschlag: ZUM-Pad</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="http://zumpad.zum.de/p/qgis_ws_201404">http://zumpad.zum.de/p/qgis_ws_201404</a>  </p>
+
+<iframe name='embed_readwrite' src='http://zumpad.zum.de/p/qgis_ws_201404?showControls=true&showChat=true&showLineNumbers=true&useMonospaceFont=false' width=600 height=400></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7">
+<hgroup>
+  <h2>Geoobjekt und Geodaten</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code class="xml">&lt;begriff&gt;
+GEOOBJEKT
+&lt;/begriff&gt;
+&lt;definition&gt;
+Abbild einer konkreten,  
+auf über und in der Erde befindlichen,  
+physisch, geometrisch oder begrifflich begrenzten Einheit  
+mit eindeutiger Identität
+&lt;/definition&gt;
+</code></pre>
+
+<pre><code class="xml">&lt;begriff&gt;
+GEODATEN
+&lt;/begriff&gt;
+&lt;definition&gt;
+digitale Informationen,  
+denen eine bestimmte räumliche Lage und Form  
+(auf der Erdoberfläche) zugewiesen werden können
+&lt;/definition&gt;
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Grundlagen: Geometrie, Topologie, Thematik, Semantik, Dynamik</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;'>
+  <p>Geoobjekte &lt;-&gt; Geoinformation</p>
+
+<ul>
+<li>Geometrie
+
+<ul>
+<li>Lage</li>
+<li>Form</li>
+</ul></li>
+<li>Topologie
+
+<ul>
+<li>relative Lage</li>
+</ul></li>
+<li>Thematik
+
+<ul>
+<li>Attribute und Werte</li>
+</ul></li>
+<li>Semantik
+
+<ul>
+<li>inhaltlichen Bedeutung</li>
+</ul></li>
+<li>Dynamik
+
+<ul>
+<li>Veränderungen (insb. zeitlich)</li>
+</ul></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>Wo liegt der Parkplatz und wie viel Fläche hat er?</li>
+<li>Welche Flurstücke sind benachbart?</li>
+<li>Was steckt hinter den Punkten?</li>
+<li>Welches Bretzenheim ist gemeint?</li>
+<li>Was war hier vorher?</li>
+</ul>
+
+<p><img src="http://github.com/kacebe/qgis_workshop201404/raw/master/img/screenshot_geodaten.jpg" width="650px" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="http://github.com/kacebe/qgis_workshop201404/raw/master/img/screenshot_geodaten.jpg" width="1000px" /></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-10">
+<hgroup>
+  <h3>Grundlagen: Koordinatenbezugssysteme</h3>
+</hgroup>
+<article class = 'flexbox vcenter'>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Koordinatenbezugssysteme</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;'>
+  <p>Geoid</p>
+
+<p><img src='http://upload.wikimedia.org/wikipedia/commons/5/56/Geoids_sm.jpg' width=450px></img></p>
+
+<p>Quelle: Wikimedia</p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>Ellipsoid</p>
+
+<p><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Datumdem.svg/500px-Datumdem.svg.png'></img></p>
+
+<p>Quelle: Wikimedia</p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12">
+<hgroup>
+  <h2>Geoide und Ellipsoide</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="http://farm8.staticflickr.com/7331/13742168574_3aa4911b04_b_d.jpg" alt="Geoide und Ellisoide"></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Geographisches KBS (WGS 84)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><center><img src='http://qgis.org/de/_images/geographic_crs.png?' width=950px></img></center></p>
+
+<p>Quelle: <a href="http://qgis.org">http://qgis.org</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Projektionen</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><center><img src='http://qgis.org/de/_images/projection_families.png' height= 600px></img></center></p>
+
+<p>Quelle: <a href="http://qgis.org/de/">http://qgis.org/de/</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Kartennetzentwürfe</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><center><iframe src = 'http://www.geometrie.tuwien.ac.at/karto/norm0001.html' width=950px></iframe></center></p>
+
+<p><a href="http://www.geometrie.tuwien.ac.at/karto/">http://www.geometrie.tuwien.ac.at/karto/</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>DHDN Gauß-Krüger und UTM</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Transversale Mercator-Projektionen (Winkeltreue Abbildungen)</p></li>
+<li><p>Unterschiede:</p>
+
+<ul>
+<li>Bezug auf Bessel- bzw. GRS80-Elliposid, Breite der Streifen</li>
+</ul></li>
+</ul>
+
+<div style='float:left;width:48%;'>
+  <p>Gauß-Krüger</p>
+
+<p><img src='http://upload.wikimedia.org/wikipedia/de/thumb/1/12/Gau%C3%9F-Kr%C3%BCger-Raster_Deutschland.png/666px-Gau%C3%9F-Kr%C3%BCger-Raster_Deutschland.png' height=450></img></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>UTM</p>
+
+<p><img src='http://upload.wikimedia.org/wikipedia/commons/a/a0/Utmzylinderrp.jpg' width=450></img></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17">
+<hgroup>
+  <h2>DHDN Gauß-Krüger und UTM</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="http://farm4.staticflickr.com/3818/13742131204_1caf47ceec_c_d.jpg" alt=""></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>EPSG und proj4</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src='http://epsg.io/4326' width=1050px></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Übung 1</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Welche Geoobjekte interessieren Euch in der ehrenamtlichen Bodendenkmalpflege?</p></li>
+<li><p>Welche Geoinformationen erfasst Ihr wofür?</p>
+
+<ul>
+<li>Habt Ihr geometrische Fragen?</li>
+<li>Habt Ihr topologische Fragen?</li>
+<li>Spielt Semantik und Dynamik eine Rolle?</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue dark quote" id="slide-20" style="background:;">
+  <article data-timings="">
+    <p><q> Was ist GIS? </q></p>
+
+<p><q> Geographische Informationssysteme </q></p>
+
+<style>
+.dark q {
+  color: white;
+}
+</style>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>John Snow 1854</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;'>
+  <p><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Snow-cholera-map-1.jpg/643px-Snow-cholera-map-1.jpg' width=450px></img></p>
+
+<p><a href="http://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak">Wikipedia: 1854 Broad Street cholera outbreak</a></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src='http://geolutions.files.wordpress.com/2011/07/011-ghost-map.jpg?w=450'></img></p>
+
+<p><img src='http://geolutions.files.wordpress.com/2011/07/012-ghost-map1.jpg?w=450'></img></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h2>Geographische Informationssysteme</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Layer-Konzept</p>
+
+<p><center><img src='http://upload.wikimedia.org/wikipedia/commons/9/9f/Layer2_GIS.png' width=700px></img></center></p>
+
+<p><a href="http://upload.wikimedia.org/wikipedia/commons/9/9f/Layer2_GIS.png">Quelle</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>Geographische Informationssysteme</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Layer-Konzept</p>
+
+<p><center><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Qgis08_grass6_toolbox.png/960px-Qgis08_grass6_toolbox.png' width=600px></img></center></p>
+
+<p><a href="http://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Qgis08_grass6_toolbox.png/960px-Qgis08_grass6_toolbox.png">Quelle</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h2>Übung 2</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>3 kml-Dateien
+
+<ul>
+<li>Punkt: FH-Gebäude</li>
+<li>Polygon: FH-Gelände</li>
+<li>Linie: Koblenzer Strasse</li>
+</ul></li>
+<li>Struktur von kml (Notepad++)
+
+<ul>
+<li><a href="http://portableapps.com/de/apps/development/notepadpp_portable">http://portableapps.com/de/apps/development/notepadpp_portable</a></li>
+</ul></li>
+<li>Laden der Daten in QGIS</li>
+<li>Speichern unter Shapefile
+
+<ul>
+<li>epsg 31467</li>
+<li>Wechsel des Projekt-KBS</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-25" style="background:;">
+  <hgroup>
+    <h2>Geodatenformate</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;'>
+  <ul>
+<li>Vektordaten
+
+<ul>
+<li>Strassen, Gebiete, Gebäude, Orte etc.</li>
+</ul></li>
+<li>Rasterdaten
+
+<ul>
+<li>Geländehöhen, Niederschlag etc.</li>
+</ul></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><center><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Vector-raster-vector-conversie.PNG/218px-Vector-raster-vector-conversie.PNG' width=250px /></p>
+
+<p><a href="http://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Vector-raster-vector-conversie.PNG/218px-Vector-raster-vector-conversie.PNG">Quelle</a></p>
+
+<p></center></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-26" style="background:;">
+  <hgroup>
+    <h2>Vektor- und Rasterdaten</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><center><img src='http://upload.wikimedia.org/wikipedia/commons/b/b7/The_use_of_a_raster_data_structure_to_summarize_a_point_pattern.gif' width=650px /></p>
+
+<p><a href="http://upload.wikimedia.org/wikipedia/commons/b/b7/The_use_of_a_raster_data_structure_to_summarize_a_point_pattern.gif">Quelle</a></p>
+
+<p></center></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-27" style="background:;">
+  <article data-timings="">
+    
+<div style='float:left;width:48%;'>
+  <h2>Geodatenerfassung</h2>
+
+<ul>
+<li>Fernerkundung
+
+<ul>
+<li>Satelliten</li>
+</ul></li>
+<li>Naherkundung
+
+<ul>
+<li>Luftbilder (Flugzeug, UAV)</li>
+</ul></li>
+<li>Terrestrisch
+
+<ul>
+<li>Vermessung</li>
+</ul></li>
+</ul>
+
+<p><center><img src='https://farm5.staticflickr.com/4117/4889294569_9d8ff6a305.jpg' width=450px /></center></p>
+
+<p><a href="https://farm5.staticflickr.com/4117/4889294569_9d8ff6a305.jpg">Quelle</a></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><center><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/SRTM_X-SAR_Coverage.jpg/265px-SRTM_X-SAR_Coverage.jpg' width=400px /></center></p>
+
+<p><a href="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/SRTM_X-SAR_Coverage.jpg/265px-SRTM_X-SAR_Coverage.jpg">Quelle</a></p>
+
+<p><center><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Grezac.jpg/320px-Grezac.jpg' width=400px /></center></p>
+
+<p><a href="http://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Grezac.jpg/320px-Grezac.jpg">Quelle</a></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-28" style="background:;">
+  <hgroup>
+    <h2>Mobile Erfassung</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;'>
+  <ul>
+<li><p>GNSS: globales Navigationssatellitensystem</p></li>
+<li><p>Unterschiedliche Systeme</p></li>
+<li><p>am bekanntesten GPS (Global Positioning System)</p>
+
+<ul>
+<li>eigentlich NAVSTAR GPS</li>
+</ul></li>
+<li><p>liefert unter optimalen Bedingungen</p></li>
+<li><p>weltweit, kontinuierlich, unabhängig von Tageszeit und
+meteorologischen Bedingungen</p></li>
+<li><p>theoretisch eine millimeter-genaue Information über</p>
+
+<ul>
+<li>Position</li>
+<li>Höhe</li>
+<li>Geschwindigkeit</li>
+<li>Uhrzeit</li>
+</ul></li>
+<li><p>des Beobachters</p></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><center><img src='http://upload.wikimedia.org/wikipedia/commons/9/9c/ConstellationGPS.gif' width=500px /></center></p>
+
+<p><a href="http://upload.wikimedia.org/wikipedia/commons/9/9c/ConstellationGPS.gif">Quelle</a></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-29" style="background:;">
+  <article data-timings="">
+    <p><a href="http://science.nasa.gov/iSat/?group=SMD">http://science.nasa.gov/iSat/?group=SMD</a></p>
+
+<iframe src='http://science.nasa.gov/iSat/?group=SMD'></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-30" style="background:;">
+  <hgroup>
+    <h2>GPS-Signal</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;'>
+  <p>Satellit sendet auf Deutsch:</p>
+
+<ul>
+<li>Laufzeit des Signals Satellit-Empfänger: ca. 0,07 Sekunden</li>
+<li><p>Geschwindigkeit des Satelliten: 3874 m/s</p>
+
+<ul>
+<li>Ich bin Satellit Nr. 12</li>
+<li>meine Position ist gerade X,Y,Z</li>
+<li>ich fliege auf Bahn r2d2</li>
+<li>diese Nachricht wurde zum Zeitpunkt T versandt</li>
+</ul></li>
+</ul>
+
+<p>Drei Satelliten:</p>
+
+<ul>
+<li>2D position fix</li>
+<li>Positionsbestimmung bezogen direkt auf Erdoberfläche</li>
+</ul>
+
+<p>Vier Satelliten:</p>
+
+<ul>
+<li>3D position fix</li>
+<li>Positionsbestimmung mit GPS-Höhe</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><a href="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Gps_signal.svg/500px-Gps_signal.svg.png">Quelle</a></p>
+
+<p><center><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Gps_signal.svg/500px-Gps_signal.svg.png' width=500px /></center></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-31" style="background:;">
+  <hgroup>
+    <h2>GPS: DOP-Werte (Dilution of Precision)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Maß für die Streubreite der Messwerte</p>
+
+<div style='float:left;width:48%;'>
+  <p>Gute DOP-Werte:</p>
+
+<p><center><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Good_gdop.png/536px-Good_gdop.png' width=450px /></center></p>
+
+<p><a href="http://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Good_gdop.png/536px-Good_gdop.png">Quelle</a></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>Schlechte DOP-Werte</p>
+
+<p><center><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Bad_gdop.png/536px-Bad_gdop.png' width=450px /></center></p>
+
+<p><a href="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Bad_gdop.png/536px-Bad_gdop.png">Quelle</a></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-32" style="background:;">
+  <hgroup>
+    <h2>DOP-Werte</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><center><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Geometric_Dilution_Of_Precision.svg/1000px-Geometric_Dilution_Of_Precision.svg.png' width=850px /></center></p>
+
+<p><a href="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Geometric_Dilution_Of_Precision.svg/1000px-Geometric_Dilution_Of_Precision.svg.png">Quelle</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-33" style="background:;">
+  <article data-timings="">
+    
+<div style='float:left;width:48%;'>
+  <h2>Weitere Faktoren</h2>
+
+<ul>
+<li>Atmosphärische Effekte
+
+<ul>
+<li>Ionosphäre/Refraktion</li>
+<li>je schräger die Signale auf die Erde treffen, desto länger ihr Weg durch die Atmosphäre</li>
+</ul></li>
+<li>Mehrwegeffekt</li>
+</ul>
+
+<p><center><img src='http://upload.wikimedia.org/wikipedia/commons/a/a2/Dopsirp.png' width=400px /></center></p>
+
+<p><a href="http://upload.wikimedia.org/wikipedia/commons/a/a2/Dopsirp.png">Quelle</a></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><center><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/GPS_delay.svg/500px-GPS_delay.svg.png' width=450px /></center></p>
+
+<p><a href="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/GPS_delay.svg/500px-GPS_delay.svg.png">Quelle</a></p>
+
+<p><center><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/GPS_Refraction.svg/500px-GPS_Refraction.svg.png' width=450px /></center></p>
+
+<p><a href="http://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/GPS_Refraction.svg/500px-GPS_Refraction.svg.png">Quelle</a></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-34" style="background:;">
+  <hgroup>
+    <h2>Genauigkeit und Präzision</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Tracks_around_the_Birkenkopf.png/951px-Tracks_around_the_Birkenkopf.png">Quelle</a>
+<center><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Tracks_around_the_Birkenkopf.png/951px-Tracks_around_the_Birkenkopf.png' width=800px /></center></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-35" style="background:;">
+  <hgroup>
+    <h2>GPS-Daten: Das gpx-Format</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-36" style="background:;">
+  <hgroup>
+    <h2>GPX</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>vgl. gps-Dateien im Ordner .../rohdaten/gpx/</p>
+
+<div style='float:left;width:48%;'>
+  <pre><code class="xml">&lt;wpt lat=&quot;49.98856925&quot; lon=&quot;8.22632588&quot;&gt;
+    &lt;ele&gt;185.8000030517578&lt;/ele&gt;
+    &lt;time&gt;2014-03-31T14:49:45Z&lt;/time&gt;
+    &lt;name&gt;&lt;![CDATA[1]]&gt;&lt;/name&gt;
+    &lt;cmt&gt;&lt;![CDATA[Genauigkeit: 4.0m]]&gt;&lt;/cmt&gt;
+    &lt;sat&gt;10&lt;/sat&gt;
+    &lt;hdop&gt;1.0&lt;/hdop&gt;
+&lt;/wpt&gt;
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="xml">  &lt;wpt lat=&quot;49.98856925&quot; lon=&quot;8.22632588&quot;&gt;
+    &lt;ele&gt;185.8000030517578&lt;/ele&gt;
+        &lt;time&gt;2014-03-31T14:49:45Z&lt;/time&gt;
+        &lt;name&gt;&lt;![CDATA[1]]&gt;&lt;/name&gt;
+        &lt;cmt&gt;&lt;![CDATA[Genauigkeit: 4.0m]]&gt;&lt;/cmt&gt;
+        &lt;sat&gt;10&lt;/sat&gt;
+        &lt;hdop&gt;1.0&lt;/hdop&gt;
+    &lt;/wpt&gt;
+</code></pre>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-37" style="background:;">
+  <hgroup>
+    <h2>Übung</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Integration von GPS-Daten</p>
+
+<p>vgl. <a href="http://www.qgis.org/de/docs/user_manual/working_with_gps/index.html">http://www.qgis.org/de/docs/user_manual/working_with_gps/index.html</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-38" style="background:;">
+  <hgroup>
+    <h2>Digitale Erfassung</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-39" style="background:;">
+  <hgroup>
+    <h2>Georeferenzierung von Karten</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Übung!</h3>
+
+<h3>Google Earth Screenshots in Ordner .../rohdaten/png/...</h3>
+
+<p><a href="http://qgis.org/de/docs/user_manual/plugins/plugins_georeferencer.html">http://qgis.org/de/docs/user_manual/plugins/plugins_georeferencer.html</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-40" style="background:;">
+  <hgroup>
+    <h2>Einbinden von Diensten</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>vgl. <a href="http://www.qgis.org/de/docs/user_manual/working_with_ogc/ogc_client_support.html">http://www.qgis.org/de/docs/user_manual/working_with_ogc/ogc_client_support.html</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-41" style="background:;">
+  <hgroup>
+    <h2>Geoportal RLP</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src='http://www.geoportal.rlp.de/portal/hilfe/geowebdienste.html'</iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-42" style="background:;">
+  <hgroup>
+    <h2>Geoportal Hessen</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src='http://www.geoportal.hessen.de/'</iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-43" style="background:;">
+  <hgroup>
+    <h2>Vektorisierung</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Übung!</p>
+
+<p>Handbuch:</p>
+
+<ul>
+<li><a href="http://www.qgis.org/de/docs/user_manual/working_with_vector/editing_geometry_attributes.html">http://www.qgis.org/de/docs/user_manual/working_with_vector/editing_geometry_attributes.html</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-44" style="background:;">
+  <hgroup>
+    <h2>Arbeiten in der Projektdatei</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Übung!</p>
+
+<p>Menü: Ansicht</p>
+
+<ul>
+<li>Kartenhinweise</li>
+<li>Lesezeichen</li>
+</ul>
+
+<p>Menü: Layer</p>
+
+<ul>
+<li>Eingebettete Layer und Gruppen
+*Externe Projektdateien laden: </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-45" style="background:;">
+  <hgroup>
+    <h2>Filtern/Auswählen</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Selektion
+
+<ul>
+<li>Thematische Auswahl (Attribute)</li>
+<li>Geometrische/Topologische Auswahl (Verschneidung)</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-46" style="background:;">
+  <hgroup>
+    <h2>Geodatenpräsentation</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>vgl. <a href="http://www.qgis.org/de/docs/user_manual/print_composer/print_composer.html">http://www.qgis.org/de/docs/user_manual/print_composer/print_composer.html</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-47" style="background:;">
+  <hgroup>
+    <h2>Tiefer einsteigen</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>z.b. mit <a href="http://qgis.org/de/docs/user_manual/plugins/plugins_evis.html">http://qgis.org/de/docs/user_manual/plugins/plugins_evis.html</a></p>
+
+<p><img src="http://hub.qgis.org/attachments/2685/evis_lost_focus_object_2_zoom_last.jpg" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-48" style="background:;">
+  <hgroup>
+    <h2>Präsentation erstellt mit</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="http://github.com/ramnathv/slidify">http://github.com/ramnathv/slidify</a></p>
+
+<iframe src='https://github.com/ramnathv/slidify'></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Ehrenamtliche Bodendenkmalpflege mit QGIS 2.0'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Agenda'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Was ist QGIS'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Screencasts'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='QGIS ist OpenSource'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Vorschlag: ZUM-Pad'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Geoobjekt und Geodaten'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Grundlagen: Geometrie, Topologie, Thematik, Semantik, Dynamik'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title=''>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Grundlagen: Koordinatenbezugssysteme'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Koordinatenbezugssysteme'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Geoide und Ellipsoide'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Geographisches KBS (WGS 84)'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Projektionen'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Kartennetzentwürfe'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='DHDN Gauß-Krüger und UTM'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='DHDN Gauß-Krüger und UTM'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='EPSG und proj4'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Übung 1'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title=''>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='John Snow 1854'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Geographische Informationssysteme'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Geographische Informationssysteme'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Übung 2'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Geodatenformate'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='Vektor- und Rasterdaten'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title=''>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Mobile Erfassung'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title=''>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='GPS-Signal'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='GPS: DOP-Werte (Dilution of Precision)'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='DOP-Werte'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title=''>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='Genauigkeit und Präzision'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='GPS-Daten: Das gpx-Format'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='GPX'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='Übung'>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='Digitale Erfassung'>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='Georeferenzierung von Karten'>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='Einbinden von Diensten'>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='Geoportal RLP'>
+         41
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title='Geoportal Hessen'>
+         42
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='Vektorisierung'>
+         43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='Arbeiten in der Projektdatei'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='Filtern/Auswählen'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='Geodatenpräsentation'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='Tiefer einsteigen'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='Präsentation erstellt mit'>
+         48
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
